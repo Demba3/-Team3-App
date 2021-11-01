@@ -126,3 +126,22 @@ The objective of the Service Social app is to connect local businesses and their
    | userName       | String   | unique identifier of the user following |
    | UserName         | String     | unique identifier of the user being followed |
    
+### Networking
+#### List of network requests by screen
+   - Home Feed Screen
+      - (Create/POST) save post
+      - (Create/POST) Create a new comment on a post
+      - (Read/GET) get posts
+   - Create Post Screen
+      - (Create/POST) Create a new post object
+   - Business Profile Screen
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update user profile image
+      - (Update/PUT) Add bio for business
+      - (Read/GET) Get all user's posts
+   - User Profile Screen
+      - (Read/GET) Saved businesses
+      - (Update/PUT) Update user profile image
+   - Search Screen
+      - (Read/GET) search for businesses
+
