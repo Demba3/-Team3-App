@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Group Project</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">L8EiXOh74pueNjBZg1oIRaLIZ5wVWGAKf9MRr2N5</string>
+    <string name="back4app_client_key">6jdVkYpow479P25ttqCa0qi79z9orVyRJddP6iha</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
