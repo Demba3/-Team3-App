@@ -85,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 //Navigate to mainActivity
                 goMainActivity();
+                Log.i(TAG, String.valueOf(user.getBoolean(User.KEY_IS_BUSINESS)));
                 Toast.makeText(LoginActivity.this, "Welcome back", Toast.LENGTH_SHORT).show();
             }
         });

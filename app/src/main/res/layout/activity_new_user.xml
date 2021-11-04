@@ -52,6 +52,16 @@
         android:minHeight="48dp"
         android:visibility="visible" />
 
+
+    <CheckBox
+        android:id="@+id/cb_isBusiness"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you a business?" />
+
     <Button
         android:id="@+id/btn_create"
         android:layout_width="match_parent"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class NewUserActivity extends AppCompatActivity {
     EditText et_userName;
     EditText et_password;
     Button btn_create;
+    CheckBox cb_isBusiness;
 
 
     @Override
@@ -29,6 +31,8 @@ public class NewUserActivity extends AppCompatActivity {
         et_userName = findViewById(R.id.et_NewUser);
         et_password = findViewById(R.id.et_NewPassword);
         btn_create = findViewById(R.id.btn_create);
+        cb_isBusiness = findViewById(R.id.cb_isBusiness);
+
 
 
         btn_create.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +41,10 @@ public class NewUserActivity extends AppCompatActivity {
                 Log.i(TAG,"create button clicked");
                 String username = et_userName.getText().toString();
                 String password = et_password.getText().toString();
+                boolean businessType = cb_isBusiness.isChecked();
+
                 //Toast.makeText(LoginActivity.this,"CLICKED", Toast.LENGTH_LONG).show();
-                createAndLogin(username , password);
+                createAndLogin(username , password, businessType);
 
             }
         });
@@ -46,12 +52,14 @@ public class NewUserActivity extends AppCompatActivity {
 
     }
 
-    private void createAndLogin(String username, String password) {
+    private void createAndLogin(String username, String password, boolean businessType) {
         // Create the ParseUser
         ParseUser user = new ParseUser();
         // Set core properties
         user.setUsername(username);
         user.setPassword(password);
+        user.put(User.KEY_IS_BUSINESS, businessType);
+
 
         // Invoke signUpInBackground
         Log.i(TAG , "Attempting to create and login user " + username);
@@ -59,8 +67,8 @@ public class NewUserActivity extends AppCompatActivity {
             public void done(ParseException e) {
                 if (e == null) {
                     // Hooray! Let them use the app now.
-                    goMainActivity();
                     Toast.makeText(NewUserActivity.this, "Welcome!", Toast.LENGTH_SHORT).show();
+                    goMainActivity();
                 } else {
                     // Sign up didn't succeed. Look at the ParseException
                     // to figure out what went wrong

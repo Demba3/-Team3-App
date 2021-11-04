@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Instagram" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Group3" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#ED1C24</item>
         <item name="colorPrimaryVariant">#920000</item>
