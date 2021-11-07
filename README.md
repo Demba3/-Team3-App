@@ -145,3 +145,5 @@ The objective of the Service Social app is to connect local businesses and their
    - Search Screen
       - (Read/GET) search for businesses
 
+
+<img src=Project.gif width=250><br>
