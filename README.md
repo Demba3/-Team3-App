@@ -28,13 +28,13 @@ The objective of the Service Social app is to connect local businesses and their
 
 **Required Must-have Stories**
 
-[x] User can login as either a customer or business 
-* Allows freelancers and businnesses to connect to customers 
-* Search feature to check out recommendations
-* User profile
-* Business owners can post advertisment
-* Buisness profile 
-* ...
+-[x] User can login as either a customer or business 
+-[] Allows freelancers and businnesses to connect to customers 
+-[] Search feature to check out recommendations
+-[]User profile
+-[] Business owners can post advertisment
+-[] Buisness profile 
+
 
 **Optional Nice-to-have Stories**
 
