@@ -31,7 +31,7 @@ The objective of the Service Social app is to connect local businesses and their
 - [X] User can login as either a customer or business 
 - [ ] Allows freelancers and businnesses to connect to customers 
 - [ ] Search feature to check out recommendations
-- [ ]User profile
+- [ ] User profile
 - [ ] Business owners can post advertisment
 - [ ] Buisness profile 
 
