@@ -14,15 +14,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.instagram.Adapters.PostsAdapter;
+import com.example.instagram.Adapters.ProfileAdapter;
+import com.example.instagram.Post;
 import com.example.instagram.R;
 import com.example.instagram.User;
 import com.parse.ParseFile;
+
+import java.util.List;
 
 public class BusinessProfileFragment extends Fragment {
 
     ImageView iv_profilePicture;
     TextView tv_userName;
     RecyclerView rv_userPosts;
+    public static final String TAG = "BusinessProfileFragment";
+    private RecyclerView rvPosts;
+    protected ProfileAdapter profileAdapter;
+    protected List<Post> allPosts;
 
 
     public BusinessProfileFragment() {
@@ -41,7 +50,7 @@ public class BusinessProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         iv_profilePicture = view.findViewById(R.id.iv_profilePicture);
         tv_userName = view.findViewById(R.id.tv_userName);
-        rv_userPosts = view.findViewById(R.id.rv_profilePosts);
+
 
 
 

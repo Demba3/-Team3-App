@@ -16,14 +16,11 @@ import com.example.instagram.fragments.BusinessProfileFragment;
 import com.example.instagram.fragments.ComposeFragment;
 import com.example.instagram.fragments.PostsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.parse.Parse;
 import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     final FragmentManager fragmentManager = getSupportFragmentManager();
-    private BottomNavigationView bottomNavigationViewBusiness;
-    private BottomNavigationView bottomNavigationViewUser;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -52,21 +49,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*setContentView(R.layout.activity_main_business);
-
-        bottomNavigationViewBusiness = findViewById(R.id.bottom_navigation_business_main);
-        bottomNavigationViewUser = findViewById(R.id.bottom_navigation_user_main);
-
-        //if business type = true (business){
-        // shows all navigation views}
-        //else(user){
-        // show limited navigation view}
-        */
         ParseUser currentUser = ParseUser.getCurrentUser();
 
         if(currentUser.getBoolean(User.KEY_IS_BUSINESS) == true){
             setContentView(R.layout.activity_main_business);
-            bottomNavigationViewBusiness = findViewById(R.id.bottom_navigation_business_main);
+            BottomNavigationView bottomNavigationViewBusiness = findViewById(R.id.bottom_navigation_business_main);
             Log.i(TAG, "User is a business");
             bottomNavigationViewBusiness.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -96,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationViewBusiness.setSelectedItemId(R.id.action_home);
         }else{
             setContentView(R.layout.activity_main_user);
-            bottomNavigationViewUser = findViewById(R.id.bottom_navigation_user_main);
+            BottomNavigationView bottomNavigationViewUser = findViewById(R.id.bottom_navigation_user_main);
             Log.i(TAG, "User is NOT a business");bottomNavigationViewUser.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {

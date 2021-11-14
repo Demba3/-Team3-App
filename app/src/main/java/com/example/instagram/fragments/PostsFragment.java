@@ -51,6 +51,7 @@ public class PostsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvPosts = getView().findViewById(R.id.rvPosts);
         allPosts = new ArrayList<>();
+
         postsAdapter = new PostsAdapter(getContext(), allPosts);
 
         //set adapter into the recycler view
@@ -72,7 +73,6 @@ public class PostsFragment extends Fragment {
         // Specify which class to query
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
-        query.include(User.KEY_PROFILE_PICTURE);
         query.addDescendingOrder(Post.KEY_CREATE_KEY);
         query.findInBackground(new FindCallback<Post>() {
             @Override

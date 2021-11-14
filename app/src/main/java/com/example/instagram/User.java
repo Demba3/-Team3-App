@@ -10,7 +10,7 @@ import com.parse.ParseUser;
 
 public class User extends ParseObject {
     public static final String KEY_USER= "user";
-    public static final String KEY_PROFILE_PICTURE = "ProfilePicture";
+    public static final String KEY_PROFILE_PICTURE = "profilePicture";
     public static final String KEY_IS_BUSINESS = "isBusiness";
 
 
