@@ -147,3 +147,6 @@ The objective of the Service Social app is to connect local businesses and their
 
 ### First Walkthrough. Different account types: Business and User. Distinct menus
 <img src=Project.gif width=250><br>
+
+### Second Walkthrough. Feed works on both user and business.
+<img src=Screenrecorder-2021-11-15-10-49-37-265_SparkVideo.gif width=250><br>
