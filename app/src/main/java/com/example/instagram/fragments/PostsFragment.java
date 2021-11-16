@@ -63,11 +63,7 @@ public class PostsFragment extends Fragment {
 
     }
 
-    private void composeActivity() {
-        Intent i =  new Intent(getContext(), ComposeFragment.class);
-        startActivity(i);
-        getActivity().finish();
-    }
+
 
     protected void queryPosts () {
         // Specify which class to query

@@ -12,8 +12,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.example.instagram.fragments.BusinessProfileFragment;
 import com.example.instagram.fragments.ComposeFragment;
+import com.example.instagram.fragments.NewProfileFragment;
 import com.example.instagram.fragments.PostsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseUser;
@@ -21,6 +21,7 @@ import com.parse.ParseUser;
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     final FragmentManager fragmentManager = getSupportFragmentManager();
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.action_profile:
                         default:
-                            fragment = new BusinessProfileFragment();
+                            fragment = new NewProfileFragment();
                             break;
 
                     }
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.action_profile_user:
                         default:
-                            fragment = new BusinessProfileFragment();
+                            fragment = new NewProfileFragment();
                             break;
 
                     }
