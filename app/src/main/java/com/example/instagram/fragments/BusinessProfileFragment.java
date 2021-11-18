@@ -27,7 +27,7 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewProfileFragment extends Fragment{
+public class BusinessProfileFragment extends Fragment{
     public static final String TAG = "NewProfileFragment";
     private TextView tv_UserName;
     private ImageView iv_ProfilePicture;
@@ -36,9 +36,8 @@ public class NewProfileFragment extends Fragment{
 
     protected ProfileAdapter profileAdapter;
     protected List<Post> allPosts;
-    User user;
 
-    public NewProfileFragment() {    }
+    public BusinessProfileFragment() {    }
 
     @Nullable
     @Override
@@ -58,7 +57,9 @@ public class NewProfileFragment extends Fragment{
         //Log.d(TAG, ParseUser.getCurrentUser().getUsername());
 
         iv_ProfilePicture = getView().findViewById(R.id.iv_profilePicture);
-        Glide.with(this).load(ParseUser.getCurrentUser().getParseFile(User.KEY_PROFILE_PICTURE).getUrl()).into(iv_ProfilePicture);
+        if(ParseUser.getCurrentUser().getParseFile(User.KEY_PROFILE_PICTURE) != null) {
+            Glide.with(this).load(ParseUser.getCurrentUser().getParseFile(User.KEY_PROFILE_PICTURE).getUrl()).into(iv_ProfilePicture);
+        }
 
         tv_Description = getView().findViewById(R.id.tv_ProfileDescription);
 

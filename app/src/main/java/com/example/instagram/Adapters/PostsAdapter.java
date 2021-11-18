@@ -71,6 +71,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             tv_Description = itemView.findViewById(R.id.tv_Description);
             iv_ProfilePicture = itemView.findViewById(R.id.iv_postProfilePicture);
 
+            //set click listener on username so other accounts can check their profile
             tv_User.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
