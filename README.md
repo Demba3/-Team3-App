@@ -152,4 +152,4 @@ The objective of the Service Social app is to connect local businesses and their
 <img src=Screenrecorder-2021-11-15-10-49-37-265_SparkVideo.gif width=250><br>
 
 ### Third Walkthrough. Business and User each have working profiles.
-<img src=Screenrecorder-2021-11-15-10-49-37-265_SparkVideo.gif width=250><br>
+<img src=Screenrecorder-2021-11-19-14-32-29-892_SparkVideo.gif width=250><br>
