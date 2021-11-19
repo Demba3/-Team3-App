@@ -31,9 +31,9 @@ The objective of the Service Social app is to connect local businesses and their
 - [X] User can login as either a customer or business // Different account types have different features in the menu 
 - [ ] Allows freelancers and businnesses to connect to customers 
 - [ ] Search feature to check out recommendations
-- [ ] User profile
-- [ ] Business owners can post advertisment
-- [ ] Buisness profile 
+- [x] User profile
+- [x] Business owners can post advertisment
+- [x] Buisness profile 
 
 
 **Optional Nice-to-have Stories**
@@ -149,4 +149,7 @@ The objective of the Service Social app is to connect local businesses and their
 <img src=Project.gif width=250><br>
 
 ### Second Walkthrough. Feed works on both user and business.
+<img src=Screenrecorder-2021-11-15-10-49-37-265_SparkVideo.gif width=250><br>
+
+### Third Walkthrough. Business and User each have working profiles.
 <img src=Screenrecorder-2021-11-15-10-49-37-265_SparkVideo.gif width=250><br>
