@@ -1,0 +1,6 @@
+purple 36283F
+grey 786683
+brown 956B6B
+orange FE822C
+pink FFD7D8
+brighter pink FAE6E5
