@@ -113,6 +113,7 @@ public class ComposeFragment extends Fragment {
         // Create a File reference for future access
         photoFile = getPhotoFileUri(photoFileName);
 
+
         // wrap File object into a content provider
         // required for API >= 24
         // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
@@ -162,6 +163,7 @@ public class ComposeFragment extends Fragment {
     }
 
     private void savePost (String description, ParseUser currentUser, File photoFile){
+
         Post post = new Post();
         post.setDescription(description);
         post.setImage(new ParseFile(photoFile));

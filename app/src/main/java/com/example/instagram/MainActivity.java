@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         default:
                             fragment = new BusinessProfileFragment();
                             break;
-
                     }
                     fragmentManager.beginTransaction().replace(R.id.frameLayoutContainer, fragment).commit();
                     return true;

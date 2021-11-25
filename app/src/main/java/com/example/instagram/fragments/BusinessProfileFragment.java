@@ -21,8 +21,12 @@ import com.example.instagram.R;
 import com.example.instagram.User;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFileUtils;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import org.xml.sax.helpers.ParserAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +63,7 @@ public class BusinessProfileFragment extends Fragment{
         iv_ProfilePicture = getView().findViewById(R.id.iv_profilePicture);
         if(ParseUser.getCurrentUser().getParseFile(User.KEY_PROFILE_PICTURE) != null) {
             Glide.with(this).load(ParseUser.getCurrentUser().getParseFile(User.KEY_PROFILE_PICTURE).getUrl()).into(iv_ProfilePicture);
+
         }
 
         tv_Description = getView().findViewById(R.id.tv_ProfileDescription);

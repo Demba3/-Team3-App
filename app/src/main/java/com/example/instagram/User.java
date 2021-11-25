@@ -9,23 +9,24 @@ import com.parse.ParseUser;
 @ParseClassName("User")
 
 public class User extends ParseObject {
-    public static final String KEY_USER= "username";
+    public static final String KEY_USER_NAME = "username";
     public static final String KEY_PROFILE_PICTURE = "profilePicture";
     public static final String KEY_IS_BUSINESS = "isBusiness";
 
 
-    public ParseFile getImage(){ return getParseFile(KEY_PROFILE_PICTURE);}
+    public ParseFile getProfilePic(){ return getParseFile(KEY_PROFILE_PICTURE);}
 
-    public void setImage(ParseFile parseFile){
+    public void setProfilePic(ParseFile parseFile){
         put(KEY_PROFILE_PICTURE, parseFile);
     }
 
-    public ParseUser getUser(){
-        return getParseUser(KEY_USER);
+
+    public ParseUser getUserName(){
+        return getParseUser(KEY_USER_NAME);
     }
 
-    public void setUser(ParseUser user){
-        put(KEY_USER, user);
+    public void setUserName(ParseUser user){
+        put(KEY_USER_NAME, user);
     }
 
 }
