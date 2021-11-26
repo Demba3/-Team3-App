@@ -12,6 +12,7 @@ public class User extends ParseObject {
     public static final String KEY_USER_NAME = "username";
     public static final String KEY_PROFILE_PICTURE = "profilePicture";
     public static final String KEY_IS_BUSINESS = "isBusiness";
+    public static final String KEY_DESCRIPTION = "description";
 
 
     public ParseFile getProfilePic(){ return getParseFile(KEY_PROFILE_PICTURE);}
@@ -29,4 +30,13 @@ public class User extends ParseObject {
         put(KEY_USER_NAME, user);
     }
 
+    public String getDescription(){
+        return getString(KEY_DESCRIPTION);
+    }
+
+    public void setDescription(String description){
+        put(KEY_DESCRIPTION, description);
+    }
+
+    public boolean getType() { return getBoolean(KEY_IS_BUSINESS);}
 }

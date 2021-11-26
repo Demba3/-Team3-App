@@ -67,6 +67,11 @@ public class BusinessProfileFragment extends Fragment{
         }
 
         tv_Description = getView().findViewById(R.id.tv_ProfileDescription);
+        if(ParseUser.getCurrentUser().getString(User.KEY_DESCRIPTION) != null) {
+            tv_Description.setText(ParseUser.getCurrentUser().getString(User.KEY_DESCRIPTION));
+
+        }
+
 
         profileAdapter = new ProfileAdapter(getContext(), allPosts);
         rv_profilePosts = getView().findViewById(R.id.rv_ProfilePosts);

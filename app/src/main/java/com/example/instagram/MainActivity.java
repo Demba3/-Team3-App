@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.example.instagram.fragments.ComposeFragment;
 import com.example.instagram.fragments.BusinessProfileFragment;
 import com.example.instagram.fragments.PostsFragment;
+import com.example.instagram.fragments.SearchFragment;
 import com.example.instagram.fragments.UserProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseUser;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new ComposeFragment();
                             break;
                         case R.id.action_search:
-                            fragment = new ComposeFragment();
+                            fragment = new SearchFragment();
                             break;
                         case R.id.action_profile:
                         default:
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new PostsFragment();
                             break;
                         case R.id.action_search_user:
-                            fragment = new ComposeFragment();
+                            fragment = new SearchFragment();
                             break;
                         case R.id.action_profile_user:
                         default:
