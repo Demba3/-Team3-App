@@ -22,11 +22,11 @@ public class User extends ParseObject {
     }
 
 
-    public ParseUser getUserName(){
+    public ParseUser getUser(){
         return getParseUser(KEY_USER_NAME);
     }
 
-    public void setUserName(ParseUser user){
+    public void setUser(ParseUser user){
         put(KEY_USER_NAME, user);
     }
 

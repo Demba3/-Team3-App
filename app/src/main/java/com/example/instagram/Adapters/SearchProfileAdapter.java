@@ -1,7 +1,6 @@
 package com.example.instagram.Adapters;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.instagram.R;
 import com.example.instagram.User;
+import com.parse.ParseFile;
 
 import java.util.List;
 
@@ -59,7 +60,15 @@ public class SearchProfileAdapter extends RecyclerView.Adapter<SearchProfileAdap
         }
 
         public void bind(User user) {
+            ParseFile image= user.getProfilePic();
+
             if(user.getType() == true){
+                if(image != null){
+                    Glide.with(context).load(user.getProfilePic().getUrl()).into(iv_ProfilePicture);
+                    tv_Username.setText(user.getUser().getUsername());
+                    tv_Description.setText(user.getDescription());
+
+                }
 
             }
         }
