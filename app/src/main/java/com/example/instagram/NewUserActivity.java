@@ -60,7 +60,6 @@ public class NewUserActivity extends AppCompatActivity {
         user.setPassword(password);
         user.put(User.KEY_IS_BUSINESS, businessType);
 
-
         // Invoke signUpInBackground
         Log.i(TAG , "Attempting to create and login user " + username);
         user.signUpInBackground(new SignUpCallback() {

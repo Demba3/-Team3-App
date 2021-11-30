@@ -1,6 +1,10 @@
 package com.example.instagram.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,57 +12,33 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.example.instagram.Adapters.PostsAdapter;
 import com.example.instagram.Adapters.SearchProfileAdapter;
 import com.example.instagram.Post;
 import com.example.instagram.R;
 import com.example.instagram.User;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SearchFragment extends Fragment {
-
     public static final String TAG = "SearchFragment";
     private RecyclerView rvUsers;
-    protected SearchProfileAdapter usersAdapter;
-    protected List<User> allUsers;
+    protected SearchProfileAdapter searchProfileAdapter;
+    protected List<ParseUser> allUsers;
 
     public SearchFragment() {
         // Required empty public constructor
     }
 
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.search_feature , menu);
-        return;
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_search , container ,false);
     }
 
     @Override
@@ -67,34 +47,27 @@ public class SearchFragment extends Fragment {
         rvUsers = getView().findViewById(R.id.rv_SearchUsers);
         allUsers = new ArrayList<>();
 
-        usersAdapter = new SearchProfileAdapter(getContext(), allUsers);
+        searchProfileAdapter = new SearchProfileAdapter(getContext(), allUsers);
 
-        //set adapter into the recycler view
-        rvUsers.setAdapter(usersAdapter);
+
+        rvUsers.setAdapter(searchProfileAdapter);
         rvUsers.setLayoutManager(new LinearLayoutManager(getContext()));
-
         queryUsers();
 
     }
 
-
-
     protected void queryUsers () {
-        // Specify which class to query
-        ParseQuery<User> query = ParseQuery.getQuery(User.class);
-        query.include(User.KEY_USER_NAME);
-        query.findInBackground(new FindCallback<User>() {
-            @Override
-            public void done(List<User> users, ParseException e) {
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.findInBackground(new FindCallback<ParseUser>() {
+            public void done(List<ParseUser> objects, ParseException e) {
                 if (e != null) {
-                    Log.e(TAG, "Issue with getting posts", e);
-                    return;
+                    Log.e(TAG , "Issue getting users", e);
                 }
-                for (User user : users) {
-                    Log.i(TAG, "User: " + user.getDescription() + " Username: " + user.getUser().getUsername());
+                for (ParseUser user : objects) {
+                    Log.i(TAG, "excelente" );
                 }
-                allUsers.addAll(users);
-                usersAdapter.notifyDataSetChanged();
+                allUsers.addAll(objects);
+                searchProfileAdapter.notifyDataSetChanged();
             }
         });
 

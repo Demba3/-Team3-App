@@ -1,6 +1,7 @@
 package com.example.instagram.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +15,16 @@ import com.bumptech.glide.Glide;
 import com.example.instagram.R;
 import com.example.instagram.User;
 import com.parse.ParseFile;
+import com.parse.ParseUser;
 
 import java.util.List;
 
 public class SearchProfileAdapter extends RecyclerView.Adapter<SearchProfileAdapter.ViewHolder> {
     private Context context;
-    private List<User> users;
+    private List<ParseUser> users;
+    String TAG = "SearchAdapter";
 
-    public SearchProfileAdapter(Context context, List<User> users) {
+    public SearchProfileAdapter(Context context, List<ParseUser> users) {
         this.context = context;
         this.users = users;
     }
@@ -30,12 +33,12 @@ public class SearchProfileAdapter extends RecyclerView.Adapter<SearchProfileAdap
     @Override
     public SearchProfileAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.search_item, parent, false);
-        return new SearchProfileAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SearchProfileAdapter.ViewHolder holder, int position) {
-        User user = users.get(position);
+        ParseUser user = users.get(position);
         holder.bind(user);
     }
 
@@ -59,18 +62,18 @@ public class SearchProfileAdapter extends RecyclerView.Adapter<SearchProfileAdap
 
         }
 
-        public void bind(User user) {
-            ParseFile image= user.getProfilePic();
-
-            if(user.getType() == true){
-                if(image != null){
-                    Glide.with(context).load(user.getProfilePic().getUrl()).into(iv_ProfilePicture);
-                    tv_Username.setText(user.getUser().getUsername());
-                    tv_Description.setText(user.getDescription());
-
+        public void bind(ParseUser user) {
+            ParseFile image= user.getParseFile(User.KEY_PROFILE_PICTURE);
+            Log.i(TAG, "Running");
+            //if(user.getBoolean(User.KEY_IS_BUSINESS) == true) {
+                if (image != null) {
+                    Glide.with(context).load(user.getParseFile(User.KEY_PROFILE_PICTURE).getUrl()).into(iv_ProfilePicture);
                 }
+                tv_Username.setText(user.getUsername());
+                tv_Description.setText(user.getString(User.KEY_DESCRIPTION));
+                Log.i(TAG, "Populated successfully");
+            //}
 
-            }
         }
     }
 }

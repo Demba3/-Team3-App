@@ -57,8 +57,6 @@ public class PostsFragment extends Fragment {
         //set adapter into the recycler view
         rvPosts.setAdapter(postsAdapter);
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
         queryPosts();
 
     }
