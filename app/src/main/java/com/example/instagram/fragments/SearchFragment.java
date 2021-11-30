@@ -58,18 +58,20 @@ public class SearchFragment extends Fragment {
 
     protected void queryUsers () {
         ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.findInBackground(new FindCallback<ParseUser>() {
-            public void done(List<ParseUser> objects, ParseException e) {
-                if (e != null) {
-                    Log.e(TAG , "Issue getting users", e);
+        query.whereEqualTo(User.KEY_IS_BUSINESS, true);
+            query.findInBackground(new FindCallback<ParseUser>() {
+                public void done(List<ParseUser> objects, ParseException e) {
+                    if (e != null) {
+                        Log.e(TAG, "Issue getting users", e);
+                    }
+                    for (ParseUser user : objects) {
+                        Log.i(TAG, "excelente");
+                    }
+                    allUsers.addAll(objects);
+                    searchProfileAdapter.notifyDataSetChanged();
                 }
-                for (ParseUser user : objects) {
-                    Log.i(TAG, "excelente" );
-                }
-                allUsers.addAll(objects);
-                searchProfileAdapter.notifyDataSetChanged();
-            }
-        });
+            });
+
 
 
     }
