@@ -29,6 +29,7 @@ import com.example.instagram.LoginActivity;
 import com.example.instagram.MainActivity;
 import com.example.instagram.Post;
 import com.example.instagram.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -45,8 +46,8 @@ public class ComposeFragment extends Fragment {
     public static final String TAG = "Fragment";
     private ImageView iv_picTaken;
     private EditText et_description;
-    private Button btn_takePic;
-    private Button btn_submit;
+    private FloatingActionButton btn_takePic;
+    private FloatingActionButton btn_submit;
     private File photoFile;
     public String photoFileName = "photo.jpg";
 

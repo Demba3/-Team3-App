@@ -9,7 +9,7 @@
 
     >
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_postProfilePicture"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -27,7 +27,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:gravity="center_vertical"
-        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_postProfilePicture"
@@ -57,6 +59,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
